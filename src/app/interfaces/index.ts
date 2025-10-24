@@ -5,8 +5,13 @@ export interface ILoginResponse {
 
 export interface IResponse<T> {
   data: T;
-  message: string,
-  meta: T;
+  message: string;
+  meta: {
+    page?: number;
+    size?: number;
+    totalPages?: number;
+    totalElements?: number;
+  };
 }
 
 export interface IUser {
@@ -76,4 +81,23 @@ export interface IGift {
   createdAt?: string;
   updatedAt?: string;
   giftList?: IGiftList;
+}
+
+export interface ICategory {
+  id?: number;
+  nombre?: string;
+  descripcion?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface IProduct {
+  id?: number;
+  nombre?: string;
+  descripcion?: string;
+  precio?: number;
+  stock?: number;
+  createdAt?: string;
+  updatedAt?: string;
+  category?: ICategory;
 }

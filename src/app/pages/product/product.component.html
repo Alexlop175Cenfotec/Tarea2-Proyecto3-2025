@@ -2,31 +2,36 @@
   <div class="row p-4">
     <div class="col-12">
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Gifts</h2>
+        <h2>Productos</h2>
       </div>
     </div>
+
     <div class="row">
       <div class="col-12">
-        <app-gift-list-form
+        <app-product-form
           [form]="form"
+          [categories]="categoryService.categories$()"
           (callSaveMethod)="save($event)"
         />
       </div>
     </div>
+
     <div class="col-12">
-      <app-gift-list
-        [giftsList]="giftListService.giftsLists$()"
+      <app-products-table
+        [products]="productService.products$()"
+        [areActionsAvailable]="true"
         (callEditMethod)="form.patchValue($event)"
         (callDeleteMethod)="delete($event)"
-      /> 
+      />
     </div>
-    @if(giftListService.giftsLists$().length) {
+
+    @if (productService.products$().length) {
       <app-pagination
-        [service]="giftListService"
+        [service]="productService"
         [customCall]="false"
       />
     }
   </div>
 } @loading (minimum 1.5s) {
-  <app-loader/>
+  <app-loader />
 }
