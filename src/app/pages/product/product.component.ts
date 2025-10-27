@@ -7,6 +7,7 @@ import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from '../../interfaces';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-product',
@@ -23,6 +24,7 @@ import { IProduct } from '../../interfaces';
 export class ProductComponent {
   public productService = inject(ProductService);
   public categoryService = inject(CategoryService);
+  public authService = inject(AuthService);
   public fb = inject(FormBuilder);
 
   public form = this.fb.group({

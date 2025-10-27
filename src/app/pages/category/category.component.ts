@@ -7,6 +7,7 @@ import { CategoryFormComponent } from '../../components/product/category-list-fo
 import { CategoryListComponent } from '../../components/product/category-list/category-list.component';
 import { PaginationComponent } from '../../components/pagination/pagination.component';
 import { LoaderComponent } from '../../components/loader/loader.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-category',
@@ -24,6 +25,7 @@ import { LoaderComponent } from '../../components/loader/loader.component';
 export class CategoryComponent implements OnInit {
   public categoryService = inject(CategoryService);
   public fb = inject(FormBuilder);
+  public authService = inject(AuthService);
 
   public isEdit = false;
 

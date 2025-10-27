@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from '../../../interfaces';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-products-table',
@@ -13,4 +14,6 @@ export class ProductsTableComponent {
   @Input() areActionsAvailable: boolean = false;
   @Output() callEditMethod: EventEmitter<IProduct> = new EventEmitter<IProduct>();
   @Output() callDeleteMethod: EventEmitter<IProduct> = new EventEmitter<IProduct>();
+
+  public authService = inject(AuthService);
 }

@@ -71,32 +71,32 @@ export const routes: Routes = [
           showInSidebar: true
         }
       },
-      {
-        path: 'gift-list',
-        component: GiftListGiftsComponent,
-        data: {
-          authorities: [
-            IRoleType.admin,
-            IRoleType.superAdmin,
-            IRoleType.user,
-          ],
-          name: 'Gift Lists',
-          showInSidebar: true
-        }
-      },
-      {
-        path: 'gifts',
-        component: GiftsComponent,
-        data: {
-          authorities: [
-            IRoleType.admin,
-            IRoleType.superAdmin,
-            IRoleType.user,
-          ],
-          name: 'Gifts',
-          showInSidebar: true
-        }
-      },
+      // {
+      //   path: 'gift-list',
+      //   component: GiftListGiftsComponent,
+      //   data: {
+      //     authorities: [
+      //       IRoleType.admin,
+      //       IRoleType.superAdmin,
+      //       IRoleType.user,
+      //     ],
+      //     name: 'Gift Lists',
+      //     showInSidebar: true
+      //   }
+      // },
+      // {
+      //   path: 'gifts',
+      //   component: GiftsComponent,
+      //   data: {
+      //     authorities: [
+      //       IRoleType.admin,
+      //       IRoleType.superAdmin,
+      //       IRoleType.user,
+      //     ],
+      //     name: 'Gifts',
+      //     showInSidebar: true
+      //   }
+      // },
       {
         path: 'product-categories',
         component: CategoryComponent,
